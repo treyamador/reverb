@@ -32,7 +32,7 @@ WAV* ReaderWriter::read(const std::string& filepath) {
 	fread(wav->header_->byte_rate_, sizeof(int), 1, file_ptr);
 	fread(wav->header_->block_align_, sizeof(short), 1, file_ptr);
 	fread(wav->header_->bits_per_sample_, sizeof(short), 1, file_ptr);
-	fread(wav->header_->data_tag_, sizeof(int), 4, file_ptr);
+	fread(wav->header_->data_tag_, sizeof(char), 4, file_ptr);
 	fread(wav->header_->data_length_, sizeof(int), 1, file_ptr);
 
 	int buf_len = *wav->header_->data_length_;
